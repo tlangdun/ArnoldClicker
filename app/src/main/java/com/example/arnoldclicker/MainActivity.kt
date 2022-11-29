@@ -129,8 +129,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun refreshCookieView() {
-        val gainsTextView: TextView = findViewById(R.id.cookieTextArea)
-        gainsTextView.text = "🍪Gains : ${arnoldData.gainsCounter}"
+        val gainsTextView: TextView = findViewById(R.id.gainsTextArea)
+        gainsTextView.text = "\uD83D\uDCAA Gains : ${arnoldData.gainsCounter}"
     }
 
     fun refreshGadgets() {

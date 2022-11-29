@@ -25,11 +25,11 @@
         app:layout_constraintVertical_bias="0.391" />
 
     <TextView
-        android:id="@+id/cookieTextArea"
+        android:id="@+id/gainsTextArea"
         android:layout_width="389dp"
         android:layout_height="35dp"
         android:layout_marginBottom="12dp"
-        android:text="🍪Cookies : 0"
+        android:text="💪 Gains : 0"
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/cookieButton"
@@ -70,7 +70,7 @@
         android:layout_height="65dp"
         android:layout_marginEnd="288dp"
         android:backgroundTint="#EE423636"
-        android:text="🍞Bakery"
+        android:text="🏋️Gym"
         android:textColor="#FFFFFF"
         android:textSize="10sp"
         app:layout_constraintBottom_toTopOf="@+id/cookieButton"
