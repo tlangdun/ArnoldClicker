@@ -3,7 +3,180 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".GadgetsActivity">
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gadgets"
+        android:textColor="@color/teal_700"
+        android:textSize="35sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <Button
+        android:id="@+id/GadgetsExitButton"
+        android:layout_width="72dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/rounded_corners"
+        android:backgroundTint="#151414"
+        android:scaleType="fitCenter"
+        android:text="Exit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.033"
+
+        />
+
+    <Button
+        android:id="@+id/SteroidButton"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#FF9800"
+        android:text="💉"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.334" />
+
+    <Button
+        android:id="@+id/FitnessButton"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#FF9800"
+        android:text="🏋🏽‍♂️"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.499" />
+
+    <Button
+        android:id="@+id/HealingButton"
+        android:layout_width="51dp"
+        android:layout_height="46dp"
+        android:backgroundTint="#FF9800"
+        android:text="💊"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <Button
+        android:id="@+id/BreakUpButton"
+        android:layout_width="50dp"
+        android:layout_height="43dp"
+        android:backgroundTint="#FF9800"
+        android:text="💔"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.099"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="258dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="40dp"
+        android:text="Here you can buy gadgets to gain muscle mass even faster."
+        app:layout_constraintBottom_toTopOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/BreakUpButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/bombprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Price: 70000"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:text="Steroid Injection"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/SteroidButton"
+        app:layout_constraintTop_toTopOf="@+id/SteroidButton" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:text="Extra Healing"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/HealingButton"
+        app:layout_constraintTop_toTopOf="@+id/HealingButton" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:text="New Fitness Equipment"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/FitnessButton"
+        app:layout_constraintTop_toTopOf="@+id/FitnessButton" />
+
+    <TextView
+        android:id="@+id/clickerkeyprice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:text="Price: 90000"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/SteroidButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/clickerkeyprice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:text="Price: 120000"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/HealingButton"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/clickerkeyprice3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="62dp"
+        android:layout_marginTop="16dp"
+        android:text="Price: 200000"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintStart_toStartOf="@+id/FitnessButton"
+        app:layout_constraintTop_toTopOf="@+id/textView5" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:text="Break Up"
+        app:layout_constraintStart_toEndOf="@+id/BreakUpButton"
+        app:layout_constraintTop_toTopOf="@+id/BreakUpButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
