@@ -101,7 +101,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
-        android:id="@+id/bombprice"
+        android:id="@+id/breakupprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
@@ -140,7 +140,7 @@
         app:layout_constraintTop_toTopOf="@+id/FitnessButton" />
 
     <TextView
-        android:id="@+id/clickerkeyprice"
+        android:id="@+id/injectionprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
@@ -150,7 +150,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/clickerkeyprice2"
+        android:id="@+id/healingprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"
@@ -160,7 +160,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/clickerkeyprice3"
+        android:id="@+id/fitnessprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="62dp"

@@ -9,8 +9,10 @@ import android.widget.Toast
 
 class GadgetsActivity : AppCompatActivity() {
     var cookieData = ArnoldData()
-    lateinit var bombCostTextView: TextView
-    lateinit var clickerKeyCostTextView: TextView
+    lateinit var breakUpCostTextView: TextView
+    lateinit var injectionTextView: TextView
+    lateinit var healingTextView: TextView
+    lateinit var fitnessTextView: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,18 +23,28 @@ class GadgetsActivity : AppCompatActivity() {
         setBuyButtonSteroid()
         setBuyButtonHealing()
         setBuyButtonFitness()
-        bombCostTextView = findViewById(R.id.bombprice)
-        clickerKeyCostTextView = findViewById(R.id.clickerkeyprice)
+        breakUpCostTextView = findViewById(R.id.breakupprice)
+        injectionTextView = findViewById(R.id.injectionprice)
+        healingTextView = findViewById(R.id.healingprice)
+        fitnessTextView = findViewById(R.id.fitnessprice)
     }
 
     fun refreshTextViews(){
-        if(cookieData.bombGadgetActive)
+        if(cookieData.breakUpGadgetActive)
         {
-            bombCostTextView.text = "Already purchased"
+            breakUpCostTextView.text = "Already purchased"
         }
-        if(cookieData.keyGadgetActive)
+        if(cookieData.injectionGadgetActive)
         {
-            clickerKeyCostTextView.text = "Already purchased"
+            injectionTextView.text = "Already purchased"
+        }
+        if(cookieData.healingGadgetActive)
+        {
+            healingTextView.text = "Already purchased"
+        }
+        if(cookieData.fitnessGadgetActive)
+        {
+            fitnessTextView.text = "Already purchased"
         }
     }
     fun setGadgetsExitButton(){
@@ -46,9 +58,9 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonBreakUp(){
         var button = findViewById<Button>(R.id.BreakUpButton)
         button.setOnClickListener {
-            if(!cookieData.bombGadgetActive){
+            if(!cookieData.breakUpGadgetActive){
                 if(cookieData.gainsCounter >= 70000) {
-                    cookieData.bombGadgetActive = true
+                    cookieData.breakUpGadgetActive = true
                     cookieData.gainsCounter -= 70000
                     refreshTextViews()
                 }else{
@@ -63,9 +75,9 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonSteroid(){
         var button = findViewById<Button>(R.id.SteroidButton)
         button.setOnClickListener {
-            if(!cookieData.keyGadgetActive) {
+            if(!cookieData.injectionGadgetActive) {
                 if (cookieData.gainsCounter >= 90000) {
-                    cookieData.bombGadgetActive = true
+                    cookieData.injectionGadgetActive = true
                     cookieData.gainsCounter -= 90000
                     refreshTextViews()
                 }else{
@@ -80,9 +92,9 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonHealing(){
         var button = findViewById<Button>(R.id.HealingButton)
         button.setOnClickListener {
-            if(!cookieData.keyGadgetActive) {
+            if(!cookieData.injectionGadgetActive) {
                 if (cookieData.gainsCounter >= 120000) {
-                    cookieData.bombGadgetActive = true
+                    cookieData.healingGadgetActive = true
                     cookieData.gainsCounter -= 120000
                     refreshTextViews()
                 }else{
@@ -97,9 +109,9 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonFitness(){
         var button = findViewById<Button>(R.id.FitnessButton)
         button.setOnClickListener {
-            if(!cookieData.keyGadgetActive) {
+            if(!cookieData.injectionGadgetActive) {
                 if (cookieData.gainsCounter >= 200000) {
-                    cookieData.bombGadgetActive = true
+                    cookieData.fitnessGadgetActive = true
                     cookieData.gainsCounter -= 200000
                     refreshTextViews()
                 }else{

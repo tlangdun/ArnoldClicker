@@ -36,13 +36,13 @@ class MainActivity : AppCompatActivity() {
     private fun setupKeyGadget() {
         val button = findViewById<Button>(R.id.keyGadget)
         button.setOnClickListener {
-            if(arnoldData.keyGadgetActive && enableGadgets){
+            if(arnoldData.injectionGadgetActive && enableGadgets){
                 var kgrnd =  (0..5).random()
                 arnoldData.gainsPerSecond += kgrnd
                 var kgrnd2 = (0..10).random()
                 arnoldData.clickUpgradeLevel += kgrnd2
                 Toast.makeText(applicationContext, "Upgraded by ${kgrnd}\n autoclick and ${kgrnd2}\n click upgrade", Toast.LENGTH_LONG).show()
-            }else if(arnoldData.keyGadgetActive){
+            }else if(arnoldData.injectionGadgetActive){
                 Toast.makeText(applicationContext, "This gadget is on timeout!", Toast.LENGTH_LONG).show()
             }
         }
@@ -59,11 +59,11 @@ class MainActivity : AppCompatActivity() {
     private fun setupBombGadget() {
         val button = findViewById<Button>(R.id.bombGadget)
         button.setOnClickListener {
-            if(arnoldData.bombGadgetActive && enableGadgets){
+            if(arnoldData.breakUpGadgetActive && enableGadgets){
                 var rnd =  (80..6000).random()
                 arnoldData.gainsCounter += rnd
                 enableGadgets = false
-            }else if(arnoldData.bombGadgetActive){
+            }else if(arnoldData.breakUpGadgetActive){
                 Toast.makeText(applicationContext, "This gadget is on timeout!", Toast.LENGTH_LONG).show()
             }
         }
@@ -134,7 +134,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun refreshGadgets() {
-        if(arnoldData.bombGadgetActive)
+        if(arnoldData.breakUpGadgetActive)
         {
             val button = findViewById<Button>(R.id.bombGadget)
             button.visibility = View.VISIBLE
@@ -142,7 +142,7 @@ class MainActivity : AppCompatActivity() {
             val button = findViewById<Button>(R.id.bombGadget)
             button.visibility = View.INVISIBLE
         }
-        if(arnoldData.keyGadgetActive)
+        if(arnoldData.injectionGadgetActive)
         {
             val button = findViewById<Button>(R.id.keyGadget)
             button.visibility = View.VISIBLE

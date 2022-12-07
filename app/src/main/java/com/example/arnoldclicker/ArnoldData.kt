@@ -24,8 +24,10 @@ class ArnoldData: java.io.Serializable{
     var autoClickerPrice = 500
     var workersPrice = 2000
     var gymPrice = 5000
-    var bombGadgetActive = false
-    var keyGadgetActive = false
+    var breakUpGadgetActive = false
+    var injectionGadgetActive = false
+    var healingGadgetActive = false
+    var fitnessGadgetActive = false
     private var newGym = false
     private val gymBonusCoef = 6
 
