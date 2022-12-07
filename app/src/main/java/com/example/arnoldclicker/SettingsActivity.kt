@@ -10,13 +10,14 @@ class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
-        setupLoadButton()
-        setupExitButton()
-        setupSaveButton()
+        loadState()
+        setExit()
+        resetGame()
+        saveState()
     }
 
-    fun setupSaveButton() { //TODO
-        var button = findViewById<Button>(R.id.button)
+    fun saveState() { //TODO
+        var button = findViewById<Button>(R.id.saveButton)
         button.setOnClickListener {
             Toast.makeText(
                 applicationContext,
@@ -26,8 +27,8 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    fun setupLoadButton() {//TODO
-        var button = findViewById<Button>(R.id.button3)
+    fun loadState() {//TODO
+        var button = findViewById<Button>(R.id.loadButton)
         button.setOnClickListener {
             Toast.makeText(
                 applicationContext,
@@ -37,7 +38,18 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    fun setupExitButton() {
+    fun resetGame() {//TODO
+        var button = findViewById<Button>(R.id.resetGameButton)
+        button.setOnClickListener {
+            Toast.makeText(
+                applicationContext,
+                "Status has been reset",
+                Toast.LENGTH_LONG
+            ).show()
+        }
+    }
+
+    fun setExit() {
         var exitButton = findViewById<Button>(R.id.exitButton)
         exitButton.setOnClickListener {
             setResult(Activity.RESULT_OK)
