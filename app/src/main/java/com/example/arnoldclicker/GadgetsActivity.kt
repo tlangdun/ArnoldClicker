@@ -8,7 +8,7 @@ import android.widget.TextView
 import android.widget.Toast
 
 class GadgetsActivity : AppCompatActivity() {
-    var cookieData = ArnoldData()
+    var data = ArnoldData()
     lateinit var breakUpCostTextView: TextView
     lateinit var injectionTextView: TextView
     lateinit var healingTextView: TextView
@@ -30,19 +30,19 @@ class GadgetsActivity : AppCompatActivity() {
     }
 
     fun refreshTextViews(){
-        if(cookieData.breakUpGadgetActive)
+        if(data.breakUpGadgetActive)
         {
             breakUpCostTextView.text = "Already purchased"
         }
-        if(cookieData.injectionGadgetActive)
+        if(data.injectionGadgetActive)
         {
             injectionTextView.text = "Already purchased"
         }
-        if(cookieData.healingGadgetActive)
+        if(data.healingGadgetActive)
         {
             healingTextView.text = "Already purchased"
         }
-        if(cookieData.fitnessGadgetActive)
+        if(data.fitnessGadgetActive)
         {
             fitnessTextView.text = "Already purchased"
         }
@@ -58,10 +58,10 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonBreakUp(){
         var button = findViewById<Button>(R.id.BreakUpButton)
         button.setOnClickListener {
-            if(!cookieData.breakUpGadgetActive){
-                if(cookieData.gainsCounter >= 70000) {
-                    cookieData.breakUpGadgetActive = true
-                    cookieData.gainsCounter -= 70000
+            if(!data.breakUpGadgetActive){
+                if(data.gainsCounter >= 70000) {
+                    data.breakUpGadgetActive = true
+                    data.gainsCounter -= 70000
                     refreshTextViews()
                 }else{
                     Toast.makeText(applicationContext, "You cannot buy this gadget", Toast.LENGTH_LONG).show()
@@ -75,10 +75,10 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonSteroid(){
         var button = findViewById<Button>(R.id.SteroidButton)
         button.setOnClickListener {
-            if(!cookieData.injectionGadgetActive) {
-                if (cookieData.gainsCounter >= 90000) {
-                    cookieData.injectionGadgetActive = true
-                    cookieData.gainsCounter -= 90000
+            if(!data.injectionGadgetActive) {
+                if (data.gainsCounter >= 90000) {
+                    data.injectionGadgetActive = true
+                    data.gainsCounter -= 90000
                     refreshTextViews()
                 }else{
                     Toast.makeText(applicationContext, "You cannot buy this gadget", Toast.LENGTH_LONG).show()
@@ -92,10 +92,10 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonHealing(){
         var button = findViewById<Button>(R.id.HealingButton)
         button.setOnClickListener {
-            if(!cookieData.injectionGadgetActive) {
-                if (cookieData.gainsCounter >= 120000) {
-                    cookieData.healingGadgetActive = true
-                    cookieData.gainsCounter -= 120000
+            if(!data.injectionGadgetActive) {
+                if (data.gainsCounter >= 120000) {
+                    data.healingGadgetActive = true
+                    data.gainsCounter -= 120000
                     refreshTextViews()
                 }else{
                     Toast.makeText(applicationContext, "You cannot buy this gadget", Toast.LENGTH_LONG).show()
@@ -109,10 +109,10 @@ class GadgetsActivity : AppCompatActivity() {
     fun setBuyButtonFitness(){
         var button = findViewById<Button>(R.id.FitnessButton)
         button.setOnClickListener {
-            if(!cookieData.injectionGadgetActive) {
-                if (cookieData.gainsCounter >= 200000) {
-                    cookieData.fitnessGadgetActive = true
-                    cookieData.gainsCounter -= 200000
+            if(!data.injectionGadgetActive) {
+                if (data.gainsCounter >= 200000) {
+                    data.fitnessGadgetActive = true
+                    data.gainsCounter -= 200000
                     refreshTextViews()
                 }else{
                     Toast.makeText(applicationContext, "You cannot buy this gadget", Toast.LENGTH_LONG).show()

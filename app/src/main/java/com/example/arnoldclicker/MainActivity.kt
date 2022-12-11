@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                 var kgrnd =  (0..5).random()
                 arnoldData.gainsPerSecond += kgrnd
                 var kgrnd2 = (0..10).random()
-                arnoldData.clickUpgradeLevel += kgrnd2
+                arnoldData.gymbroLevel += kgrnd2
                 Toast.makeText(applicationContext, "Upgraded by ${kgrnd}\n autoclick and ${kgrnd2}\n click upgrade", Toast.LENGTH_LONG).show()
             }else if(arnoldData.injectionGadgetActive){
                 Toast.makeText(applicationContext, "This gadget is on timeout!", Toast.LENGTH_LONG).show()

@@ -7,13 +7,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import kotlin.math.pow
 
 class ArnoldData: java.io.Serializable{
-    var gainsCounter: Long = 0
+    var gainsCounter: Long = 1000
     var clickValue: Long = 1
     var gainsPerSecond: Long = 0
-    var clickUpgradeLevel: Long = 1
-    var autoClickerUpgradeLevel: Long = 0
-    var workersUpgradeLevel: Long = 0
-    var gymUpgradeLevel: Long = 0
+    var gymbroLevel: Long = 6
+    var proteinLevel: Long = 1
+    var creatineLevel: Long = 2
+    var preworkoutLevel: Long = 10
     private val clickUpgradeStartPrice: Long = 20
     private val priceIncreaseCoef: Double = 2.5
     private val increaseUpgradeValue: Double = 2.0
@@ -21,9 +21,9 @@ class ArnoldData: java.io.Serializable{
     private val autoclickValue = 1
     private val workerValue = 4
     private val gymValue = 10
-    var autoClickerPrice = 500
-    var workersPrice = 2000
-    var gymPrice = 5000
+    var proteinPrice = 100
+    var creatinePrice = 100
+    var preWorkoutPrice = 100
     var breakUpGadgetActive = false
     var injectionGadgetActive = false
     var healingGadgetActive = false
@@ -46,44 +46,44 @@ class ArnoldData: java.io.Serializable{
         var buffer = "{ cookiesCounter: $gainsCounter, "
         buffer += "clickValue: $clickValue, "
         buffer += "cookiesPerSecond $gainsPerSecond, "
-        buffer += "clickUpgradeLevel: $clickUpgradeLevel, "
-        buffer += "autoClickerUpgradeLevel: $autoClickerUpgradeLevel }"
+        buffer += "clickUpgradeLevel: $gymbroLevel, "
+        buffer += "autoClickerUpgradeLevel: $proteinLevel }"
         return buffer
     }
 
-    fun getClickUpgPrice(): Long {
+    fun gymBroPrice(): Long {
         var upgradeValue =
-            clickUpgradeStartPrice * priceIncreaseCoef.pow((clickUpgradeLevel - 1).toDouble())
+            clickUpgradeStartPrice * priceIncreaseCoef.pow((gymbroLevel - 1).toDouble())
         return upgradeValue.toLong()
     }
 
     fun calculateClickValue() {
         clickValue *= 2
     }
-    fun updateAutoClicker() {
-        gainsCounter -= autoClickerPrice
-        var tmp = autoClickerPrice.toDouble()
+    fun updateProtein() {
+        gainsCounter -= proteinPrice
+        var tmp = proteinPrice.toDouble()
         tmp *= autoClickerPriceCoef
-        autoClickerPrice = tmp.toInt()
-        autoClickerUpgradeLevel++
+        proteinPrice = tmp.toInt()
+        proteinLevel++
         gainsPerSecond += autoclickValue
     }
 
-    fun updateWorkers() {
-        gainsCounter -= workersPrice
-        var tmp = workersPrice.toDouble()
+    fun updateCeratine() {
+        gainsCounter -= creatinePrice
+        var tmp = creatinePrice.toDouble()
         tmp *= autoClickerPriceCoef
-        workersPrice = tmp.toInt()
-        workersUpgradeLevel++
+        creatinePrice = tmp.toInt()
+        creatineLevel++
         gainsPerSecond += workerValue
     }
 
-    fun updateGym() {
-        gainsCounter -= gymPrice
-        var tmp = gymPrice.toDouble()
+    fun updatePreworkout() {
+        gainsCounter -= preWorkoutPrice
+        var tmp = preWorkoutPrice.toDouble()
         tmp *= autoClickerPriceCoef
-        gymPrice = tmp.toInt()
-        gymUpgradeLevel++
+        preWorkoutPrice = tmp.toInt()
+        preworkoutLevel++
         gainsPerSecond += gymValue
         newGym = true
     }
