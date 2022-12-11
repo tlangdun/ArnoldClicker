@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         setupClickButton()
         setupUpgradeButton()
         setupGadgetsButton()
-        setupGyms()
+        //setupGyms()
         initTimer()
         setupBombGadget()
         setupKeyGadget()
@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
         handler.postDelayed(timer, secondInMillis)
     }
 
+    /*
     private fun setupGyms() {
         val button = findViewById<Button>(R.id.upgradeButton4)
         button.setOnClickListener {
@@ -102,6 +103,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
     }
+     */
 
     private fun setupGadgetsButton() {
         val button = findViewById<Button>(R.id.upgradeButton3)
