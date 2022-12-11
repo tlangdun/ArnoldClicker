@@ -7,13 +7,13 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import kotlin.math.pow
 
 class ArnoldData: java.io.Serializable{
-    var gainsCounter: Long = 1000
+    var gainsCounter: Long = 0
     var clickValue: Long = 1
     var gainsPerSecond: Long = 0
-    var gymbroLevel: Long = 6
-    var proteinLevel: Long = 1
-    var creatineLevel: Long = 2
-    var preworkoutLevel: Long = 10
+    var gymbroLevel: Long = 0
+    var proteinLevel: Long = 0
+    var creatineLevel: Long = 0
+    var preworkoutLevel: Long = 0
     private val clickUpgradeStartPrice: Long = 20
     private val priceIncreaseCoef: Double = 2.5
     private val increaseUpgradeValue: Double = 2.0
@@ -69,7 +69,7 @@ class ArnoldData: java.io.Serializable{
         gainsPerSecond += autoclickValue
     }
 
-    fun updateCeratine() {
+    fun updateCreatine() {
         gainsCounter -= creatinePrice
         var tmp = creatinePrice.toDouble()
         tmp *= autoClickerPriceCoef

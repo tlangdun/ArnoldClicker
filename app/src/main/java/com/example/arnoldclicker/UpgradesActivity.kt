@@ -20,7 +20,7 @@ class UpgradesActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upgrades)
-        data = intent.getSerializableExtra("cookieData") as ArnoldData
+        data = intent.getSerializableExtra("arnolddata") as ArnoldData
         Log.i("App", data.toString())
         proteinTextView = findViewById(R.id.proteinText)
         creatineTextView = findViewById(R.id.creatineText)
@@ -79,7 +79,7 @@ class UpgradesActivity : AppCompatActivity(){
 
         findViewById<Button>(R.id.ceratineUpgradeButton).setOnClickListener {
             if (data.gainsCounter >= data.creatinePrice) {
-                data.updateCeratine()
+                data.updateCreatine()
                 refreshTextViews()
             } else {
                 Toast.makeText(applicationContext, "You cannot buy this upgrade!", Toast.LENGTH_LONG).show()

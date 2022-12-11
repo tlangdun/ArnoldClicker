@@ -1,16 +1,19 @@
 package com.example.arnoldclicker
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
     var arnoldData = ArnoldData()
@@ -23,14 +26,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        if (arnoldData.gainsCounter ==  0L){
+            var mPrefs = getPreferences(MODE_PRIVATE)
+            val gson = Gson()
+            if (!(mPrefs.getString("data", "").equals(null) )){
+
+                val json = mPrefs.getString("data", "")
+                val obj: ArnoldData = gson.fromJson(json, ArnoldData::class.java)
+                arnoldData = obj;
+            }
+
+        }
+
         setupClickButton()
         setupUpgradeButton()
-        setupGadgetsButton()
+        //setupGadgetsButton()
         //setupGyms()
         initTimer()
         setupBombGadget()
         setupKeyGadget()
         setupSettingsButton()
+
     }
 
     private fun setupKeyGadget() {
@@ -52,6 +68,8 @@ class MainActivity : AppCompatActivity() {
         var button = findViewById<Button>(R.id.settingsButton)
         button.setOnClickListener{
             val intent = Intent(this, SettingsActivity::class.java)
+            intent.putExtra("arnolddata", arnoldData)
+
             startActivity(intent)
         }
     }
@@ -104,7 +122,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
      */
-
+/*
     private fun setupGadgetsButton() {
         val button = findViewById<Button>(R.id.upgradeButton3)
         button.setOnClickListener {
@@ -113,11 +131,13 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+ */
+
     private fun setupUpgradeButton() {
         val button = findViewById<Button>(R.id.upgradeButton)
         button.setOnClickListener {
             val intent = Intent(this, UpgradesActivity::class.java)
-            intent.putExtra("cookieData", arnoldData)
+            intent.putExtra("arnolddata", arnoldData)
             startActivityForResult(intent, upgradeRequestCode)
         }
     }
@@ -154,5 +174,17 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == upgradeRequestCode && resultCode == Activity.RESULT_OK) {
+            arnoldData = data!!.getSerializableExtra("cookieData") as ArnoldData
+            refreshCookieView()
+            var button = findViewById<ImageButton>(R.id.cookieButton)
+            var background = findViewById<ConstraintLayout>(R.id.background)
+            //arnoldData.startBakeryBonus(handler , button, background)
+            refreshGadgets()
+        }
     }
 }

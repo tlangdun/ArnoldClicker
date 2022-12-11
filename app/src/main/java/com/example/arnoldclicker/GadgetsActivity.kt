@@ -1,6 +1,7 @@
 package com.example.arnoldclicker
 
 import android.app.Activity
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -8,7 +9,9 @@ import android.widget.TextView
 import android.widget.Toast
 
 class GadgetsActivity : AppCompatActivity() {
-    var data = ArnoldData()
+
+
+     var data = ArnoldData()
     lateinit var breakUpCostTextView: TextView
     lateinit var injectionTextView: TextView
     lateinit var healingTextView: TextView
@@ -16,6 +19,8 @@ class GadgetsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
         setContentView(R.layout.activity_gadgets)
         setGadgetsExitButton()
         setBuyButtonBreakUp()
@@ -50,7 +55,9 @@ class GadgetsActivity : AppCompatActivity() {
     fun setGadgetsExitButton(){
         var exitButton = findViewById<Button>(R.id.GadgetsExitButton)
         exitButton.setOnClickListener {
-            setResult(Activity.RESULT_OK)
+            var returnIntent = Intent()
+            returnIntent.putExtra("arnolddata", data)
+            setResult(Activity.RESULT_OK, returnIntent)
             finish()
         }
     }
