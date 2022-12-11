@@ -23,11 +23,10 @@ class SettingsActivity : AppCompatActivity() {
 
         loadState()
         setExit()
-        resetGame()
         saveState()
     }
 
-    fun saveState() { //TODO
+    fun saveState() {
         var button = findViewById<Button>(R.id.saveButton)
         button.setOnClickListener {
 
@@ -47,7 +46,7 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    fun loadState() {//TODO
+    fun loadState() {
         var button = findViewById<Button>(R.id.loadButton)
         button.setOnClickListener {
             var mPrefs = getPreferences(MODE_PRIVATE)
@@ -65,16 +64,6 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    fun resetGame() {//TODO
-        var button = findViewById<Button>(R.id.resetGameButton)
-        button.setOnClickListener {
-            Toast.makeText(
-                applicationContext,
-                "Status has been reset",
-                Toast.LENGTH_LONG
-            ).show()
-        }
-    }
 
     fun setExit() {
         var exitButton = findViewById<Button>(R.id.exitButton)

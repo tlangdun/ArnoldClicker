@@ -26,18 +26,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        if (arnoldData.gainsCounter ==  0L){
-            var mPrefs = getPreferences(MODE_PRIVATE)
-            val gson = Gson()
-            if (!(mPrefs.getString("data", "").equals(null) )){
-
-                val json = mPrefs.getString("data", "")
-                val obj: ArnoldData = gson.fromJson(json, ArnoldData::class.java)
-                arnoldData = obj;
-            }
-
-        }
-
         setupClickButton()
         setupUpgradeButton()
         //setupGadgetsButton()
